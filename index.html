@@ -8,12 +8,30 @@
     <link href="style.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-    <div id="counter" class="counter">00d:12h:12m:12s</div>
-    <div id="date" class="date">2002/02/02</div>
-    <input type="date" min="2022-05-01" max="2022-11-01" class="calendar">
-    <button class="button button1">Green</button>
-    <button class="button button2">Blue</button>
-    
+    <div class="counter">
+        <div class="days">
+            <div class="number">00</div>
+            <div class="text">Days</div>
+        </div>
+        <div class="hour">
+            <div class="number">00</div>
+            <div class="text">Hours</div>
+        </div>
+        <div class="min">
+            <div class="number">00</div>
+            <div class="text">Minutes</div>
+        </div>
+        <div class="sec">
+            <div class="number">00</div>
+            <div class="text">Seconds</div>
+        </div>
+    </div>
+    <div class="data">
+        <input type="date" min="2022-05-01" max="2022-11-01" class="date">
+        <input type="time" id="appt" name="appt" class="time">
+    </div>
+    <button class="button">Start</button>
+
     
     <script src="script.js"></script>
 </body>
