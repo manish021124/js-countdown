@@ -1,3 +1,15 @@
+const currentDate = new Date();
+// let date = document.getElementById('date').submit();
+// console.log(date);
+
+function myFunction(){
+    let date = document.getElementById('date').submit();
+console.log(date);
+}
+
+
+
+
 // function showTime(){
 //     var date = new Date();
 //     var h = date.getHours(); 
