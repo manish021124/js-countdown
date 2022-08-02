@@ -52,9 +52,9 @@ body{
 } 
 
 
-@media only screen and (min-width: 750px){
+@media only screen and (min-width: 480px){
     .counter{
-        font-size: 100px;
+        font-size: 60px;
     }
 
     .date{
@@ -63,24 +63,20 @@ body{
 
 }
 
-@media only screen and (min-width: 1100px){
+@media only screen and (min-width: 768px){
+    .counter{
+        font-size: 100px;
+    }
+}
+
+@media only screen and (min-width: 1110px){
     .counter{
         font-size: 150px;
     }
-
-    .date{
-        font-size: 50px;
-    }
-
 }
 
 @media only screen and (min-width: 1500px){
     .counter{
         font-size: 200px;
     }
-
-    .date{
-        font-size: 50px;
-    }
-
 }
