@@ -16,15 +16,19 @@ body{
     flex-direction: column;
 }
 
-.time{
-    font-size: 300px;
+.counter{
+    font-size: 50px;
     color: #fff;
     font-weight: 700;
 }
 
 .date{
     color: #fff;
-    font-size: 50px;
+    font-size: 40px;
+}
+
+.calendar{
+    font-size: 20px;
 }
 
 .button{
@@ -46,3 +50,37 @@ body{
 .button2{
     background-color: #008CBA;
 } 
+
+
+@media only screen and (min-width: 750px){
+    .counter{
+        font-size: 100px;
+    }
+
+    .date{
+        font-size: 50px;
+    }
+
+}
+
+@media only screen and (min-width: 1100px){
+    .counter{
+        font-size: 150px;
+    }
+
+    .date{
+        font-size: 50px;
+    }
+
+}
+
+@media only screen and (min-width: 1500px){
+    .counter{
+        font-size: 200px;
+    }
+
+    .date{
+        font-size: 50px;
+    }
+
+}
