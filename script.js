@@ -19,14 +19,8 @@
     
 // }
 
-// function nightMode(){
-//      const checkbox = document.getElementById('checkbox')
-
-//      document.body.classList.toggle('dark-mode');
-// }
 
 // showTime();
-// checkbox.addEventListener('change', nightMode);
 
 
 

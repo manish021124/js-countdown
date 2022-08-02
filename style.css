@@ -26,38 +26,3 @@ body{
     color: #fff;
 }
 
-/* 
-
-
-
-body{
-    background-color: var(--primary-color);
-    font-size: 40px;
-}
-
-.container{
-    margin-left: 400px;
-    font-size: 270px;
-    font-weight: 700;
-    color: var(--secondary-color);
-    display: inline;
-    position: absolute;
-    top: 270px;
-}
-
-.container .clock{
-    letter-spacing: -10px;
-    word-spacing: -40px;
-}
-
-#MySecDisplay{
-    margin-left: -10px;
-    color: #BEBEBE;
-    word-spacing: -40px;
-}
-
-
-
-
-
- */ 
