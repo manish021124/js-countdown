@@ -5,8 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countdown</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
 </head>
 <body>
+    <div class="container">
+        <span id="MyClockDisplay" class="clock" onload="showTime()"></span>
+        <span id="MySecDisplay" class="clock" onload="showTime()"></span>
+    </div>
     
+    <label class="switch" id="checkbox">
+        <input type="checkbox">
+        <span class="slider round"></span>
+        <p class="nightmode">Night mode</p>
+    </label>
+    
+    <script src="script.js"></script>
 </body>
 </html>
