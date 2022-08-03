@@ -1,24 +1,23 @@
 const currentDate = new Date();
-let currentHours = currentDate.getHours();
-let currentMinutes = currentDate.getMinutes();
-let currentSeconds = currentDate.getSeconds();
-let currentYear = currentDate.getFullYear();
-let currentMonth = currentDate.getMonth();
-let currentDay = currentDate.getDate();
+// let currentHours = currentDate.getHours();
+// let currentMinutes = currentDate.getMinutes();
+// let currentSeconds = currentDate.getSeconds();
+// let currentYear = currentDate.getFullYear();
+// let currentMonth = currentDate.getMonth();
+// let currentDay = currentDate.getDate();
 let data = document.getElementById('data');
 
 document.getElementById('button').addEventListener("click", getData);
-// console.log(currentDate);
+console.log(currentDate);
 function getData(){
     let date = data.elements[0].value;
     let time = data.elements[1].value;
-    let timer = date + time;
+//     let timer = date + time;
     
 
-        let counter = timer - currentDate;
-        console.log(counter);
+//         let counter = date - currentDate;
+//         console.log(counter);
 }
-// count();
 
 
 
