@@ -1,12 +1,13 @@
 const currentDate = new Date();
-// let date = document.getElementById('date').submit();
-// console.log(date);
+let time = document.getElementById('time');
 
-function myFunction(){
-    let date = document.getElementById('date').submit();
-console.log(date);
+document.getElementById('button').addEventListener("click", getData);
+
+function getData(){
+    let date = document.getElementById('date').innerHTML;
+
+    console.log(date);
 }
-
 
 
 
