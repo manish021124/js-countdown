@@ -7,11 +7,17 @@ function inputValue(){
     const valueDate = new Date();
     const yearValue = valueDate.getFullYear();
     let monthValue = ((valueDate.getMonth() + 1) < 10) ? "0" + ((valueDate.getMonth() + 1)) : (valueDate.getMonth() + 1);
-    let dayValue = (valueDate.getDate()) < 10 ? "0" + (valueDate.getDate()) : valueDate.getDate(); 
-    const fullDateValue = yearValue + "-" + monthValue + "-" + dayValue;
+    let dayValue = (valueDate.getDate() < 10) ? "0" + valueDate.getDate() : valueDate.getDate(); 
+    const dateValue = yearValue + "-" + monthValue + "-" + dayValue;
+    let hourValue = (valueDate.getHours() < 10) ? "0" + valueDate.getHours() : valueDate.getHours();
+    let minuteValue = (valueDate.getMinutes() < 10) ? "0" + valueDate.getMinutes() : valueDate.getMinutes();
+    const timeValue = hourValue + ":" + minuteValue;
 
-    document.getElementById('date').value = fullDateValue;
-    document.getElementById('date').min = fullDateValue;
+    document.getElementById('date').value = dateValue;
+    document.getElementById('date').min = dateValue;
+    document.getElementById('time').value = timeValue;
+
+    setTimeout(inputValue, 1000);
 }
 
 function start(){
