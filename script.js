@@ -1,9 +1,9 @@
 const data = document.getElementById('data');
 
-dateValue();
+inputValue();
 document.getElementById('button').addEventListener("click", start);
 
-function dateValue(){
+function inputValue(){
     const valueDate = new Date();
     const yearValue = valueDate.getFullYear();
     let monthValue = ((valueDate.getMonth() + 1) < 10) ? "0" + ((valueDate.getMonth() + 1)) : (valueDate.getMonth() + 1);
@@ -12,7 +12,6 @@ function dateValue(){
 
     document.getElementById('date').value = fullDateValue;
     document.getElementById('date').min = fullDateValue;
-
 }
 
 function start(){
