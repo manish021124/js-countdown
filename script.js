@@ -2,6 +2,7 @@ const data = document.getElementById('data');
 
 inputValue();
 document.getElementById('button').addEventListener("click", start);
+document.getElementById('button').addEventListener("click", startCount);
 
 function inputValue(){
     const valueDate = new Date();
@@ -16,11 +17,9 @@ function inputValue(){
     document.getElementById('date').value = dateValue;
     document.getElementById('date').min = dateValue;
     document.getElementById('time').value = timeValue;
-
-    setTimeout(inputValue, 1000);
 }
 
-function start(){
+function startCount(){
     const currentDate = Date.now();
     let inputDate = data.elements[0].value;
     let inputTime = data.elements[1].value;
@@ -42,16 +41,29 @@ function start(){
     displayCount(minCount, countingMinutes);
     displayCount(secCount, countingSeconds);
 
-    setTimeout(start, 1000);
+    setTimeout(startCount, 1000);
+}
+
+function start(){
+    document.getElementById('data').style.visibility = "hidden";
+    document.getElementById('button').style.backgroundColor = "red";
+    document.getElementById('button').innerHTML = "Stop";
+}
+
+function stop(){
+    document.getElementById('data').style.visibility = "visible";
+    document.getElementById('button').style.backgroundColor = "green";
+    document.getElementById('button').innerHTML = "Start";
 }
 
 function displayCount(count, counting){
-    if(counting < 10){
+    if(counting < 10 && counting > -1){
         count.innerHTML = "0" + counting;
     }else{
         count.innerHTML = counting;
     }
 }
+
 
 
 
