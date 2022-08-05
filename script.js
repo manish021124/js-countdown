@@ -1,9 +1,9 @@
-const currentDate = Date.now();
 const data = document.getElementById('data');
 
 document.getElementById('button').addEventListener("click", start);
 
 function start(){
+    const currentDate = Date.now();
     let inputDate = data.elements[0].value;
     let inputTime = data.elements[1].value;
     let totalInput = inputDate + " " + inputTime;
@@ -19,18 +19,12 @@ function start(){
     const minCount = document.getElementById('mincount');
     const secCount = document.getElementById('seccount');
 
-
-    console.log(countingDays);
-    console.log(countingHours);
-    console.log(countingMinutes);
-    console.log(countingSeconds);
-
     displayCount(dayCount, countingDays);
     displayCount(hourCount, countingHours);
     displayCount(minCount, countingMinutes);
     displayCount(secCount, countingSeconds);
 
-    // setTimeout(start, 1000);
+    setTimeout(start, 1000);
 }
 
 function displayCount(count, counting){
