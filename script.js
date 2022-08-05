@@ -2,7 +2,6 @@ const currentDate = Date.now();
 const data = document.getElementById('data');
 
 document.getElementById('button').addEventListener("click", start);
-console.log(currentDate);
 
 function start(){
     getData();
@@ -20,7 +19,6 @@ function dataToMilli(date, time){
     let inputDateTime = new Date(totalInput);
     let inputMilli = inputDateTime.getTime();
 
-    console.log(inputMilli);
     calculateCount(inputMilli);
 }
 
@@ -31,7 +29,6 @@ function calculateCount(milli){
     let countingMinutes = Math.floor((countingTime % (60 * 60 * 1000)) / (60 * 1000));
     let countingSeconds = Math.floor((countingTime % (60 * 1000)) / (1000));
 
-    console.log(countingTime);
     console.log(countingDays);
     console.log(countingHours);
     console.log(countingMinutes);
