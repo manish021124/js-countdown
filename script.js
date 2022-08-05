@@ -1,6 +1,19 @@
 const data = document.getElementById('data');
 
+dateValue();
 document.getElementById('button').addEventListener("click", start);
+
+function dateValue(){
+    const valueDate = new Date();
+    const yearValue = valueDate.getFullYear();
+    let monthValue = ((valueDate.getMonth() + 1) < 10) ? "0" + ((valueDate.getMonth() + 1)) : (valueDate.getMonth() + 1);
+    let dayValue = (valueDate.getDate()) < 10 ? "0" + (valueDate.getDate()) : valueDate.getDate(); 
+    const fullDateValue = yearValue + "-" + monthValue + "-" + dayValue;
+
+    document.getElementById('date').value = fullDateValue;
+    document.getElementById('date').min = fullDateValue;
+
+}
 
 function start(){
     const currentDate = Date.now();
