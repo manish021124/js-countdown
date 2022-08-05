@@ -50,11 +50,11 @@ function start(){
     document.getElementById('button').innerHTML = "Stop";
 }
 
-function stop(){
-    document.getElementById('data').style.visibility = "visible";
-    document.getElementById('button').style.backgroundColor = "green";
-    document.getElementById('button').innerHTML = "Start";
-}
+// function stop(){
+//     document.getElementById('data').style.visibility = "visible";
+//     document.getElementById('button').style.backgroundColor = "green";
+//     document.getElementById('button').innerHTML = "Start";
+// }
 
 function displayCount(count, counting){
     if(counting < 10 && counting > -1){
