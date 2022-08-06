@@ -1,9 +1,12 @@
 const data = document.getElementById('data');
+// let temp = 1;
 
 inputValue();
+
 document.getElementById('button').addEventListener("click", start);
 document.getElementById('button').addEventListener("click", startCount);
 
+//value for date and time
 function inputValue(){
     const valueDate = new Date();
     const yearValue = valueDate.getFullYear();
@@ -20,13 +23,13 @@ function inputValue(){
 }
 
 function startCount(){
-    const currentDate = Date.now();
-    let inputDate = data.elements[0].value;
+    const currentDate = Date.now();     //date in milliseconds
+    let inputDate = data.elements[0].value;     //getting input from user
     let inputTime = data.elements[1].value;
-    let totalInput = inputDate + " " + inputTime;
-    let inputDateTime = new Date(totalInput);
-    let inputMilli = inputDateTime.getTime();
-    let countingTime = inputMilli - currentDate;
+    let totalInput = inputDate + " " + inputTime;       //to get same format to get difference
+    let inputDateTime = new Date(totalInput);       
+    let inputMilli = inputDateTime.getTime();       //input date and time in milliseconds
+    let countingTime = inputMilli - currentDate;       //difference in milliseconds
     let countingDays = Math.floor(countingTime / (24 * 60 * 60 * 1000));
     let countingHours = Math.floor((countingTime % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
     let countingMinutes = Math.floor((countingTime % (60 * 60 * 1000)) / (60 * 1000));
@@ -48,13 +51,14 @@ function start(){
     document.getElementById('data').style.visibility = "hidden";
     document.getElementById('button').style.backgroundColor = "red";
     document.getElementById('button').innerHTML = "Stop";
+    document.getElementById('button').addEventListener("click", stop);
 }
 
-// function stop(){
-//     document.getElementById('data').style.visibility = "visible";
-//     document.getElementById('button').style.backgroundColor = "green";
-//     document.getElementById('button').innerHTML = "Start";
-// }
+function stop(){
+    document.getElementById('data').style.visibility = "visible";
+    document.getElementById('button').style.backgroundColor = "green";
+    document.getElementById('button').innerHTML = "Start";
+}
 
 function displayCount(count, counting){
     if(counting < 10 && counting > -1){
