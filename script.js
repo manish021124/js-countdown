@@ -1,10 +1,19 @@
 const data = document.getElementById('data');
+const button = document.getElementById('button');
 // let temp = 1;
 
 inputValue();
+button.addEventListener("click", startCondition);
 
-document.getElementById('button').addEventListener("click", start);
-document.getElementById('button').addEventListener("click", startCount);
+
+function startCondition(){
+    if(button.innerHTML == "Start"){
+        startCount();
+        start();
+    }else{
+        stop();
+    }
+}
 
 //value for date and time
 function inputValue(){
@@ -48,16 +57,15 @@ function startCount(){
 }
 
 function start(){
-    document.getElementById('data').style.visibility = "hidden";
-    document.getElementById('button').style.backgroundColor = "red";
-    document.getElementById('button').innerHTML = "Stop";
-    document.getElementById('button').addEventListener("click", stop);
+    data.style.visibility = "hidden";
+    button.style.backgroundColor = "red";
+    button.innerHTML = "Stop";
 }
 
 function stop(){
-    document.getElementById('data').style.visibility = "visible";
-    document.getElementById('button').style.backgroundColor = "green";
-    document.getElementById('button').innerHTML = "Start";
+    data.style.visibility = "visible";
+    button.style.backgroundColor = "green";
+    button.innerHTML = "Start";
 }
 
 function displayCount(count, counting){
