@@ -38,7 +38,6 @@ function start(){
     button.style.backgroundColor = "red";
     button.innerHTML = "Stop";
     startCount();
-    setTimeout(startCount, 1000);
 }
 
 function startCount(){
@@ -53,24 +52,38 @@ function startCount(){
     let countingHours = Math.floor((countingTime % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
     let countingMinutes = Math.floor((countingTime % (60 * 60 * 1000)) / (60 * 1000));
     let countingSeconds = Math.floor((countingTime % (60 * 1000)) / (1000));
+    let id = null;
 
     displayStartCount(dayCount, countingDays);
     displayStartCount(hourCount, countingHours);
     displayStartCount(minCount, countingMinutes);
     displayStartCount(secCount, countingSeconds);
 
-}
+    if(countingDays == 0 && countingHours == 0 && countingMinutes == 0 && countingSeconds == 0){
+        endCount();
+    }
 
-function stop(){
-    data.style.visibility = "visible";
-    button.style.backgroundColor = "green";
-    button.innerHTML = "Start";
-    endCount();
-    inputValue();
-    clearTimeout(startCount);
+    if(button.innerHTML == "Stop"){
+        setTimeout(startCount, 1000);
+    }else{
+        stop();
+    }
 }
 
 function endCount(){
+    stop();
+}
+
+function stop(){
+    clearTimeout(startCount);
+    data.style.visibility = "visible";
+    button.style.backgroundColor = "green";
+    button.innerHTML = "Start";
+    inputValue();
+    stopCount();
+}
+
+function stopCount(){
     displayEndCount(dayCount);
     displayEndCount(hourCount);
     displayEndCount(minCount);
@@ -89,6 +102,8 @@ function displayEndCount(count){
     count.innerHTML = "00";
 }
 
+// function alert(){
 
+// }
 
 
