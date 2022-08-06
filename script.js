@@ -1,14 +1,16 @@
 const data = document.getElementById('data');
 const button = document.getElementById('button');
-// let temp = 1;
+const dayCount = document.getElementById('daycount');
+const hourCount = document.getElementById('hourcount');
+const minCount = document.getElementById('mincount');
+const secCount = document.getElementById('seccount');
 
 inputValue();
 button.addEventListener("click", startCondition);
 
 
-function startCondition(){
+function startCondition(){      //button to stop and start counting(loop)
     if(button.innerHTML == "Start"){
-        startCount();
         start();
     }else{
         stop();
@@ -31,6 +33,14 @@ function inputValue(){
     document.getElementById('time').value = timeValue;
 }
 
+function start(){
+    data.style.visibility = "hidden";
+    button.style.backgroundColor = "red";
+    button.innerHTML = "Stop";
+    startCount();
+    setTimeout(startCount, 1000);
+}
+
 function startCount(){
     const currentDate = Date.now();     //date in milliseconds
     let inputDate = data.elements[0].value;     //getting input from user
@@ -43,37 +53,40 @@ function startCount(){
     let countingHours = Math.floor((countingTime % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
     let countingMinutes = Math.floor((countingTime % (60 * 60 * 1000)) / (60 * 1000));
     let countingSeconds = Math.floor((countingTime % (60 * 1000)) / (1000));
-    const dayCount = document.getElementById('daycount');
-    const hourCount = document.getElementById('hourcount');
-    const minCount = document.getElementById('mincount');
-    const secCount = document.getElementById('seccount');
 
-    displayCount(dayCount, countingDays);
-    displayCount(hourCount, countingHours);
-    displayCount(minCount, countingMinutes);
-    displayCount(secCount, countingSeconds);
+    displayStartCount(dayCount, countingDays);
+    displayStartCount(hourCount, countingHours);
+    displayStartCount(minCount, countingMinutes);
+    displayStartCount(secCount, countingSeconds);
 
-    setTimeout(startCount, 1000);
-}
-
-function start(){
-    data.style.visibility = "hidden";
-    button.style.backgroundColor = "red";
-    button.innerHTML = "Stop";
 }
 
 function stop(){
     data.style.visibility = "visible";
     button.style.backgroundColor = "green";
     button.innerHTML = "Start";
+    endCount();
+    inputValue();
+    clearTimeout(startCount);
 }
 
-function displayCount(count, counting){
+function endCount(){
+    displayEndCount(dayCount);
+    displayEndCount(hourCount);
+    displayEndCount(minCount);
+    displayEndCount(secCount);
+}
+
+function displayStartCount(count, counting){
     if(counting < 10 && counting > -1){
         count.innerHTML = "0" + counting;
     }else{
         count.innerHTML = counting;
     }
+}
+
+function displayEndCount(count){
+    count.innerHTML = "00";
 }
 
 
