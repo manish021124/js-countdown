@@ -8,7 +8,6 @@ const secCount = document.getElementById('seccount');
 inputValue();
 button.addEventListener("click", startCondition);
 
-
 function startCondition(){      //button to stop and start counting(loop)
     if(button.innerHTML == "Start"){
         start();
@@ -22,14 +21,17 @@ function inputValue(){
     const valueDate = new Date();
     const yearValue = valueDate.getFullYear();
     let monthValue = ((valueDate.getMonth() + 1) < 10) ? "0" + ((valueDate.getMonth() + 1)) : (valueDate.getMonth() + 1);
+    let maxMonthValue = ((valueDate.getMonth() + 4) < 10) ? "0" + ((valueDate.getMonth() + 4)) : (valueDate.getMonth() + 4);
     let dayValue = (valueDate.getDate() < 10) ? "0" + valueDate.getDate() : valueDate.getDate(); 
     const dateValue = yearValue + "-" + monthValue + "-" + dayValue;
+    const maxDateValue = yearValue + "-" + maxMonthValue + "-" + dayValue;
     let hourValue = (valueDate.getHours() < 10) ? "0" + valueDate.getHours() : valueDate.getHours();
     let minuteValue = (valueDate.getMinutes() < 10) ? "0" + valueDate.getMinutes() : valueDate.getMinutes();
     const timeValue = hourValue + ":" + minuteValue;
 
     document.getElementById('date').value = dateValue;
     document.getElementById('date').min = dateValue;
+    document.getElementById('date').max = maxDateValue;
     document.getElementById('time').value = timeValue;
 }
 
@@ -72,6 +74,7 @@ function startCount(){
 
 function endCount(){
     stop();
+    alert("Tada!!!");
 }
 
 function stop(){
@@ -101,9 +104,3 @@ function displayStartCount(count, counting){
 function displayEndCount(count){
     count.innerHTML = "00";
 }
-
-// function alert(){
-
-// }
-
-
